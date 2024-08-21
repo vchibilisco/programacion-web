@@ -1,0 +1,9 @@
+.column {
+    float: left;
+    width: 50%; /* Para dos columnas */
+}
+
+.three-column {
+    margin-top: 10px;
+    width: 33.33%; /* Para tres columnas */
+}

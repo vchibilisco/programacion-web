@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+.sidebar-layout {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
