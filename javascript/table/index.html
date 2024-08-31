@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table + JS</title>
+</head>
+<body>
+    <p>Formulario</p>
+    <form onsubmit="addStudent(event)">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="lastName">Apellido:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <button type="submit">Agregar</button>
+    </form>
+
+    <p>Table de Alumnos</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </tr>
+        </thead>
+        <tbody id="student_table">
+
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

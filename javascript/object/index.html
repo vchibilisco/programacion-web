@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto</title>
+</head>
+<body>
+    <p id="literal"></p>
+    <p id="constructor"></p>
+
+    <script>
+        const objLiteral = {
+            name: 'Juan',
+            lastName: 'Salvador'
+        };
+
+        const objConstructor = new Object();
+        objConstructor.name = 'Luis';
+        objConstructor.lastName = 'Juarez';
+
+        const pLiteral = document.getElementById('literal');
+        pLiteral.innerHTML = `Nombre: ${objLiteral.name}, Apellido: ${objLiteral.lastName}`;
+
+        const pConstructor = document.getElementById('constructor');
+        pConstructor.innerHTML = `Nombre: ${objConstructor.name}, Apellido: ${objConstructor.lastName}`;
+    </script>
+</body>
+</html>

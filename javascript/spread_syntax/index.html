@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread</title>
+    <script>
+        // los ""..."" se le llama Spread
+        const showName = ({ name, ...params }) => {
+            document.getElementById('show_name').innerHTML = name;
+
+            showLastNameAndAge(params);
+        };
+
+        const showLastNameAndAge = ({ lastName, age }) => {
+            document.getElementById('show_lastName').innerHTML = lastName;
+            document.getElementById('show_age').innerHTML = age;
+        };
+    </script>
+</head>
+<body>
+    <button onclick="showName({ name: 'Juan', lastName: 'Jaime', age: 34 })">Click me!</button>
+
+    <p id="show_name"></p>
+    <p id="show_lastName"></p>
+    <p id="show_age"></p>
+    
+</body>
+</html>
