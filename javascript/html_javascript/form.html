@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <script src="getInfoFromStorage.js"></script>
+    <script src="addInfo.js"></script>
+</head>
+<body>
+    <form onsubmit="addInfo(event)">
+        <input type="text" placeholder="Nombre" id="name" required>
+        <input type="text" placeholder="Apellido" id="lastName" required>
+
+        <div>
+            <button type="submit">Guardar</button>
+            <a href="index.html">Volver</a>
+        </div>
+    </form>
+</body>
+</html>
