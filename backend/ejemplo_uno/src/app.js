@@ -3,7 +3,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var qs = require('querystring');
 
-var usersRouter = require('./routes/usersRoutes');
+const careersRoutes = require('./routes/careersRoutes');
 
 var app = express();
 
@@ -15,6 +15,6 @@ app.set('query parse', str => {
     return qs.parse(str);
 });
 
-app.use('/users', usersRouter);
+app.use('/careers', careersRoutes);
 
 module.exports = app;
