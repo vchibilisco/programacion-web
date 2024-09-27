@@ -5,7 +5,7 @@ class Careers extends Model {
     super.init(
       {
         id: {
-            type: DataTypes,
+            type: DataTypes.NUMBER,
             autoIncrement: true,
             primaryKey: true
         },
