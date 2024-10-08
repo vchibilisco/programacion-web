@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { findAll, create } = require('../services/careersServices');
+const { findAll, create, findById } = require('../services/careersServices');
 
 const router = express.Router();
 
@@ -8,14 +8,6 @@ const validateBody = (req, res, next) => {
     if (!req.body.name) {
         res.status(400).json({
             message: 'name field is required.'
-        });
-
-        return;
-    }
-
-    if (typeof req.body.accredited !== 'boolean') {
-        res.status(400).json({
-            message: 'accredited should be true or false.'
         });
 
         return;
@@ -36,8 +28,21 @@ router.get('/', async (req, res) => {
 });
 
 /**obtener por id */
-router.get('/:id', (req, res) => {
-    res.json('Buscar basado id');
+router.get('/:id', async (req, res) => {
+    try {
+        const career = await findById(Number(req.params.id));
+
+        if (!career) {
+            res.status(404).json({
+                message: 'Career not found'
+            });
+            return;
+        }
+
+        res.json(career);
+    } catch (error) {
+        res.sendStatus(500);
+    }
 });
 
 /** crear */

@@ -16,6 +16,6 @@ app.set('query parse', str => {
     return qs.parse(str);
 });
 
-app.use('/careers', careersRoutes);
+app.use('/api/careers', careersRoutes);
 
 module.exports = app;

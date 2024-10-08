@@ -1,7 +1,5 @@
 const { Careers } = require('../model/careers');
 
-let careers = [];
-
 const findAll = async () => {
     try {
         const careers = await Careers.getAll();
@@ -12,19 +10,30 @@ const findAll = async () => {
     }
 };
 
-const create = (career) => {
-    const newCareer = {
-        id: careers.length + 1,
-        name: career.name,
-        accredited: career.accredited
-    };
+const findById = async (id) => {
+    try {
+        const career = await Careers.getById(id);
 
-    careers.push(newCareer);
+        return career;
+    } catch (error) {
+        console.error('careersServices: ' + error);
+        throw error;
+    }
+};
 
-    return newCareer;
+const create = async (career) => {
+    try {
+        const newCareer = await Careers.create({ name: career.name });
+
+        return newCareer;
+    } catch (error) {
+        console.error('careersServices: ' + error);
+        throw error;
+    }
 };
 
 module.exports = {
     findAll,
+    findById,
     create
 };
