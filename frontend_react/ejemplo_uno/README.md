@@ -42,6 +42,8 @@ export default [
         { allowConstantExport: true },
       ],
       'indent': ['error', 2],
+      'jsx-quotes': ['error', 'prefer-single'],
+      'key-spacing': ['error', { 'mode': 'strict' }],
       'semi': ['error', 'always'],
       'no-extra-semi': 'error'
     },
