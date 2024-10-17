@@ -14,8 +14,11 @@ const CareersPage = () => {
 
   const fetchCareers = async () => {
     setFetchingCareers(true);
-    const response = await getCareers();
-    setCareers(response);
+    const response = await fetch('/api/careers', {
+      method: 'GET'
+    });
+    const data = await response.json();
+    setCareers(data);
     setFetchingCareers(false)
   };
 
