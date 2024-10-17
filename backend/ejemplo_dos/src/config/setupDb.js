@@ -7,11 +7,11 @@ let seqInstance = null;
 
 const createInstance = async () => {
     const instance = new Sequelize(
-        'institute', // nombre de base de datos
-        'external', // usuario
-        'pexternal', // contraseña
+        'base de datos', // nombre de base de datos
+        'usuario', // usuario
+        'contrasenia', // contraseña
         {
-            host: '192.168.75.130',
+            host: 'dominio/ip',
             dialect: 'mysql',
             pool: {
                 max: 3
