@@ -32,8 +32,28 @@ const create = async (career) => {
     }
 };
 
+const updateById = async (id, payload) => {
+    try {
+        await Careers.updateById(id,  { name: payload.name });
+    } catch (error) {
+        console.error('careersServices: ' + error);
+        throw error;
+    }
+};
+
+const deleteById = async (id) => {
+    try {
+        await Careers.deleteById(id);
+    } catch (error) {
+        console.error('careersServices: ' + error);
+        throw error;
+    }
+};
+
 module.exports = {
     findAll,
     findById,
-    create
+    create,
+    updateById,
+    deleteById
 };

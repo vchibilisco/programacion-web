@@ -1,0 +1,28 @@
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.app-layout__sidebar {
+  padding: 20px;
+  background-color: lightblue;
+}
+
+.app-layout__sidebar li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.app-layout__sidebar li a {
+  text-decoration: none;
+}
+
+.app-layout__main-content {
+  flex: 1;
+  margin: 20px;
+}
+
+.app-layout__menu-active {
+  background-color: blue;
+  color: white;
+}

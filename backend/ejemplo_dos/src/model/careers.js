@@ -55,7 +55,7 @@ class Careers extends Model {
   };
 
   static getById = async (id) => {
-    return await this.findByPk(id, {
+    return await this.findOne(id, {
       where: {
         deleted: 0
       },
@@ -63,6 +63,27 @@ class Careers extends Model {
         exclude: 'deleted, createdAt, updatedAt'
       }
     });
+  };
+
+  static updateById = async (id, payload) => {
+    return await this.update(payload, {
+      where: {
+        id
+      }
+    });
+  };
+
+  static deleteById = async (id) => {
+    return await this.update(
+      {
+        deleted: 1
+      },
+      {
+        where: {
+          id
+        }
+      }
+    );
   };
 };
 

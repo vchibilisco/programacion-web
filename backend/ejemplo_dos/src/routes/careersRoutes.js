@@ -1,20 +1,9 @@
 const express = require('express');
 
-const { findAll, create, findById } = require('../services/careersServices');
+const { findAll, create, findById, updateById, deleteById } = require('../services/careersServices');
+const { validateById, validateBody } = require('../middleware/careersMiddleware');
 
 const router = express.Router();
-
-const validateBody = (req, res, next) => {
-    if (!req.body.name) {
-        res.status(400).json({
-            message: 'name field is required.'
-        });
-
-        return;
-    }
-
-    next();
-};
 
 //** Definimos todas las rutas */
 /**obtener todos */
@@ -28,7 +17,7 @@ router.get('/', async (req, res) => {
 });
 
 /**obtener por id */
-router.get('/:id', async (req, res) => {
+router.get('/:id', validateById, async (req, res) => {
     try {
         const career = await findById(Number(req.params.id));
 
@@ -46,19 +35,35 @@ router.get('/:id', async (req, res) => {
 });
 
 /** crear */
-router.post('/', validateBody, (req, res) => {
-    const newCareer = create(req.body);
-    res.json(newCareer);
+router.post('/', validateBody, async (req, res) => {
+    try {
+        const newCareer = await create(req.body);
+        res.json(newCareer);
+    } catch (error) {
+        res.sendStatus(500);
+    } 
 });
 
 /**actualiza todo el recurso por id */
-router.put('/:id', (req, res) => {
-    res.json('actualiza todo el recurso basado id');
+router.put('/:id', validateById, validateBody, async (req, res) => {
+    try {
+        await updateById(req.params.id, req.body);
+    
+        res.json('Ok');
+    } catch (error) {
+        res.sendStatus(500);
+    }
 });
 
 /**borra por id */
-router.delete('/:id', (req, res) => {
-    res.json('borra basado id');
+router.delete('/:id', validateById, async (req, res) => {
+    try {
+        await deleteById(req.params.id);
+    
+        res.json('Ok');
+    } catch (error) {
+        res.sendStatus(500);
+    }
 });
 
 module.exports = router;
