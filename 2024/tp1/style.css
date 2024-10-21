@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.layout {
+    height: 100%;
+    display: flex;
+}
+
+.sidebar {
+    background-color: darkturquoise;
+    width: 200px;
+    padding-left: 20px;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+
+.sidebar nav a:first-child.selected,
+.sidebar nav a:hover:first-child {
+    border-start-start-radius: 5px;
+}
+
+.sidebar nav a:last-child.selected,
+.sidebar nav a:hover:last-child {
+    border-end-start-radius: 5px;
+}
+
+.sidebar nav a.selected {
+    background-color: white;
+    padding-left: 10px;
+    font-weight: 700;
+}
+
+.sidebar nav a:hover {
+    font-weight: 700;
+    background-color: paleturquoise;
+    padding-left: 10px;
+}
+
+.container {
+    overflow-y: scroll;
+    flex: 1;
+}
+
+.container header {
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.75);
+    padding: 0 20px 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    padding: 20px;
+}

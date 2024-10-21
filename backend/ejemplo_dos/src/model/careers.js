@@ -55,12 +55,20 @@ class Careers extends Model {
   };
 
   static getById = async (id) => {
-    return await this.findOne(id, {
+    return await this.findOne({
       where: {
-        deleted: 0
+        deleted: 0,
+        id
       },
       attributes: {
         exclude: 'deleted, createdAt, updatedAt'
+      },
+      include: {
+        model: Levels,
+        as: 'levels',
+        attributes: {
+          exclude: 'careers_id, deleted, createdAt, updatedAt'
+        }
       }
     });
   };

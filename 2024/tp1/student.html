@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar estudiandes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+<body>
+    <div class="layout">
+        <div class="sidebar">
+            <h3>Trabajo Práctico 1</h3>
+            <nav>
+                <a href="index.html">Página Principal</a>
+                <a class="selected" href="student.html">Alumnos</a>
+            </nav>
+        </div>
+        <div class="container">
+            <header>
+                <h2>Alumnos</h2>
+                <a class="button" href="student_form.html">Agregar</a>
+            </header>
+            <main>
+                <div class="search">
+                    <input type="text" id="searchByLastName" placeholder="Buscar por Apellido">
+                    <button onclick="searchByLastName()">Buscar</button>
+                </div>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Legajo</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <label for="itemsPerPage">Ítems por página:</label>
+                    <select onchange="onChangeItemPerPage(event)" id="itemsPerPage">
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                    <div id="paginationControl"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="studentModule.js"></script>
+</body>
+</html>

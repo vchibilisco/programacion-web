@@ -1,0 +1,30 @@
+.layout-root {
+  height: 100vh;
+  display: flex;
+}
+
+.layout-menu {
+  padding: 20px 0 0 20px;
+  background-color: lightblue;
+}
+
+.layout-menu nav ul li {
+  list-style: none;
+  padding: 5px 0 5px 0;
+}
+
+.layout-menu nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.layout-menu nav .menu-selected {
+  background-color: beige;
+  padding: 5px;
+}
+
+.layout-main-content {
+  flex: 1;
+  background-color: antiquewhite;
+  padding: 20px;
+}
