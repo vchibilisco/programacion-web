@@ -6,6 +6,7 @@ import Layout from './layout/Layout.jsx';
 import MainPage from './pages/MainPage.jsx';
 import ListCareers from './pages/careers/ListCareers.jsx';
 import DetailCareers from './pages/careers/DetailCareers.jsx';
+import FormCareer from './pages/careers/FormCareer.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/careers/:id',
         element: <DetailCareers />
+      },
+      {
+        path: '/careers/form',
+        element: <FormCareer />
       }
     ]
   }

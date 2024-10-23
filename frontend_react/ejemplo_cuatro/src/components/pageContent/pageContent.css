@@ -1,0 +1,20 @@
+.page-content {
+  height: 100%;
+}
+
+.page-content__header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background-color: aliceblue;
+}
+
+.page-content__header_actions button:not(:last-child) {
+  margin-right: 5px;
+}
+
+.page-content__main {
+  padding: 20px;
+}

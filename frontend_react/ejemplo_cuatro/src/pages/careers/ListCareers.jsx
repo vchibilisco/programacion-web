@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PageContent from "../../components/pageContent/PageContent";
 
 const ListCareers = () => {
   const navigate = useNavigate();
@@ -28,9 +29,14 @@ const ListCareers = () => {
   };
 
   return (
-    <div>
-      Listar Carreras
-
+    <PageContent
+      headerTitle="Listar Carreras"
+      actions={ [
+        <button key='report'>Reporte</button>,
+        <button key='download'>Descargar</button>,
+        <button key='add' onClick={() => navigate('/careers/form')}>Agregar</button>
+      ] }
+    >
       {
         fetchingCareers
           ? <p>Por favor espere, recuperando información...</p>
@@ -63,7 +69,7 @@ const ListCareers = () => {
             </table>
           </>
       }
-    </div>
+    </PageContent>
   );
 };
 

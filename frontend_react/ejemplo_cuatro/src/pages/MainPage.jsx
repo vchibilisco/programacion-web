@@ -1,8 +1,14 @@
+import PageContent from "../components/pageContent/PageContent";
+
 const MainPage = () => {
   return (
-    <div>
-      Página Principal
-    </div>
+    <PageContent
+      headerTitle="Página Principal"
+    >
+      <div>
+        Contenido Principal
+      </div>
+    </PageContent>
   );
 };
 

@@ -20,9 +20,10 @@ const App = () => {
   return (
     <>
       <AddItems
+        inputPlaceholder='Agregar un elemento al listado'
         onAddItem={ handleAdd }
       />
-      
+
       <TodoList
         todoList={ superList }
       />

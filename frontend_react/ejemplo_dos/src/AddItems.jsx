@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { func, string } from 'prop-types';
 
-const AddItems = ({ onAddItem }) => {
+const AddItems = ({ onAddItem, inputPlaceholder }) => {
 	const [inputValue, setInputValue] = useState('');
 
 	const handleAdd = () => {
@@ -14,7 +15,7 @@ const AddItems = ({ onAddItem }) => {
       <input
         value={ inputValue }
         onChange={ (evt) => setInputValue(evt.target.value) }
-        placeholder='Agregar producto'
+        placeholder={ inputPlaceholder }
       />
 
       <button
@@ -24,6 +25,15 @@ const AddItems = ({ onAddItem }) => {
       </button>
     </>
 	);
+};
+
+AddItems.propTypes = {
+  onAddItem: func.isRequired,
+  inputPlaceholder: string
+};
+
+AddItems.defaultProps = {
+  inputPlaceholder: 'Agregar un valor'
 };
 
 export default AddItems;
