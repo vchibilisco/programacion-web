@@ -23,13 +23,13 @@ const FormCareer = (id = null, values = defaultValues) => {
     //   if (id) {
     //     await fetch(`/api/students/${id}`, {
     //       method: 'PUT',
-    //       body
+    //       body: JSON.stringify(body)
     //     }
     //     );
     //   } else {
     //     await fetch('/api/students', {
     //       method: 'POST',
-    //       body
+    //       body: JSON.stringify(body)
     //     });
     //   }
     // } catch (error) {
